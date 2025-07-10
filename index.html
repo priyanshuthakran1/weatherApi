@@ -5,14 +5,86 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Weather App</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Inlined for simplicity - move to style.css later */
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #74ebd5, #acb6e5);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    form {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 30px;
+    }
+
+    .cityInput {
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 25px;
+      outline: none;
+      width: 250px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 25px;
+      background-color: #007BFF;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    .card {
+      background-color: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      min-width: 300px;
+      max-width: 400px;
+    }
+
+    .card h2 {
+      margin: 0;
+      font-size: 28px;
+      color: #333;
+    }
+
+    .card p {
+      font-size: 20px;
+      color: #555;
+    }
+  </style>
 </head>
 <body>
   <form id="weatherForm">
-    <input type="text" class="cityInput" placeholder="Enter City Name" style="text-align: center;" />
+    <input type="text" class="cityInput" placeholder="Enter City Name" />
     <button type="submit">Get</button>
   </form>
 
-  <div class="card" style="display: none;"></div>
+  <div class="card" style="display: none;">
+    <!-- Weather data will go here -->
+    <h2>City Name</h2>
+    <p>Temperature: 25°C</p>
+    <p>Condition: Sunny</p>
+  </div>
 
   <script src="index.js"></script>
 </body>
